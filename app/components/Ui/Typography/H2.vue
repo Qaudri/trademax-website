@@ -1,5 +1,5 @@
 <template>
-  <h2 :class="color==='primary' ? 'text-primary' : color==='white' ? text-white :'text-secondary'" class="text-2xl md:text-3xl 2xl:text-4xl"><slot/></h2>
+  <h2 :class="color==='secondary' ? 'text-secondary' : color==='white' ? 'text-white' : color === 'primary' ? 'text-primary': 'text-neutral-800''" class="text-2xl md:text-3xl 2xl:text-4xl"><slot/></h2>
 </template>
 <script>
   export default {

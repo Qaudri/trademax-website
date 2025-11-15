@@ -1,5 +1,5 @@
 <template>
-  <p :class="[color==='primary' ? 'text-primary' : color==='white' ? 'text-white' :'text-secondary', small_text ? 'text-sm 2xl:text-base' : 'text-sm md:text-base 2xl:text-lg']" class="font-normal">
+  <p :class="[color==='secondary' ? 'text-secondary' : color==='white' ? 'text-white' : color === 'primary' ? 'text-primary': 'text-neutral-800',  small_text ? 'text-sm 2xl:text-base' : 'text-base 2xl:text-lg']" class="font-normal">
     <slot/>
   </p>
 </template>
