@@ -1,7 +1,7 @@
 <template>
   <NuxtLink :to="url" v-if="url"
     :class="linkClasses"
-    class="py-2 px-5 text-white uppercase font-normal text-lg 2xl:text-lg justify-center  active:bg-primary outline-none"
+    class="py-2 px-5 text-white uppercase font-normal text-base 2xl:text-lg justify-center  active:bg-primary outline-none"
     :style="(loading || disabled) ? '' : 'transition: background-color 500ms ease-in-out, opacity 500ms ease-in-out;'"
     :disabled="loading || disabled"
   >
