@@ -26,7 +26,7 @@ export default defineNuxtConfig({
   // Make the project name available to the client by exposing it as a public runtime config value.
   runtimeConfig: {
     public: {
-      projectName: process.env.PROJECT_NAME
+      projectName: process.env.PROJECT_NAME || 'Trademax'
     }
   }
 })
