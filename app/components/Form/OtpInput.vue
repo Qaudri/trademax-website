@@ -11,7 +11,7 @@
         pattern="[0-9]*"
         maxlength="1"
         :class="inputClasses"
-        class="w-12 h-12 md:w-14 md:h-14 text-center text-lg font-medium border rounded-md outline-none ring-0 focus:outline-none bg-white"
+        class="w-12 h-12 md:w-14 md:h-14 text-center text-lg font-medium border outline-none ring-0 focus:outline-none bg-white"
         :style="disabled ? '' : 'transition: border-color 300ms ease-out, color 300ms ease-out;'"
         @input="!disabled && handleInput(index, $event)"
         @keydown="!disabled && handleKeydown(index, $event)"

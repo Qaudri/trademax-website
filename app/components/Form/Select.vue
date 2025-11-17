@@ -10,7 +10,7 @@
       @focus="!disabled && handleFocus()"
       @blur="!disabled && handleBlur($event)"
       :class="triggerClasses"
-      class="w-full py-3 px-4 pr-10 border text-sm outline-none ring-0 focus:outline-none rounded-md bg-white"
+      class="w-full py-3 px-4 pr-10 border text-sm outline-none ring-0 focus:outline-none bg-white"
       :style="disabled ? '' : 'transition: border-color 300ms ease-out, color 300ms ease-out;'"
       role="combobox"
       :aria-expanded="isOpen"
@@ -54,7 +54,7 @@
     <div
       v-if="isOpen"
       ref="dropdown"
-      class="absolute z-50 w-full mt-1 bg-white border border-accent-200 rounded-md shadow-lg max-h-60 overflow-auto"
+      class="absolute z-50 w-full mt-1 bg-white border border-accent-200 shadow-lg max-h-60 overflow-auto"
       role="listbox"
       :aria-labelledby="`${selectId}-label`"
     >

@@ -28,7 +28,7 @@
       <!-- Custom checkbox -->
       <div
         :class="checkboxClasses"
-        class="relative flex items-center justify-center w-4 h-4 border-2 rounded flex-shrink-0"
+        class="relative flex items-center justify-center w-4 h-4 border-2  flex-shrink-0"
       >
         <!-- Checkmark -->
         <svg

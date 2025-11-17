@@ -12,7 +12,7 @@
       @focus="!disabled && handleFocus()"
       @blur="!disabled && handleBlur()"
       :class="textareaClasses"
-      class="w-full py-3 px-4 border text-sm outline-none ring-0 focus:outline-none rounded-md bg-white peer placeholder-transparent resize-y"
+      class="w-full py-3 px-4 border text-sm outline-none ring-0 focus:outline-none bg-white peer placeholder-transparent resize-y"
       :style="disabled ? '' : 'transition: border-color 300ms ease-out, color 300ms ease-out;'"
       :placeholder="label"
     ></textarea>
