@@ -2,7 +2,7 @@
     <div>
         <Trademarkform ref="trademarkformFunctions" />
         <!-- Hero section contact us -->
-        <section class=" bg-[url('@/assets/images/inner-banner.png')] pb-10 pt-20 bg-cover bg-center">
+        <section class=" bg-[url('@/assets/images/inner-banner.png')] pb-10 pt-20 ">
             <Container>
                 <div class="md:w-1/2 text-white">
                     <UiTypographyP color="white">
