@@ -181,27 +181,6 @@ setTimeout(()=>{
 } 
 
 
-// const sendEmail = async () => {
-//   try {
-//     await emailjs.send(
-//       SERVICE_ID,
-//       TEMPLATE_ID,
-//       {
-//         from_name: form.value.name,
-//         from_email: form.value.email,
-//         message: form.value.message
-//       },
-//       PUBLIC_KEY
-//     )
-//     alert('Email sent successfully!')
-//     form.value.name = ''
-//     form.value.email = ''
-//     form.value.message = ''
-//   } catch (error) {
-//     console.error('Error sending email:', error)
-//     alert('Failed to send email.')
-//   }
-// }
 
 // OPEN FORM FUNCTION
 const openform = () => {
