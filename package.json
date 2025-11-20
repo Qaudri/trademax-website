@@ -11,12 +11,17 @@
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
+    "@iconify/vue": "^5.0.0",
+    "@matrunchyk/vue3-tel-input": "^1.0.20-alpha7",
     "@nuxt/ui": "^2.22.3",
     "@nuxtjs/tailwindcss": "^6.14.0",
+    "intl-tel-input": "^25.12.5",
     "nuxt": "^4.2.1",
     "pinia": "^3.0.4",
     "vue": "^3.5.24",
+    "vue-phone-number-input": "^1.12.13",
     "vue-router": "^4.6.3",
+    "vue-tel-input": "^9.5.0",
     "vue3-carousel-nuxt": "^1.1.6"
   }
 }

@@ -1,61 +1,28 @@
 <template>
-  <div class="w-full max-w-md mx-auto p-5">
-    <form @submit.prevent="sendEmail" ref="form" class="space-y-4">
+  <div class=" mt-36 ">
+    <label class="font-semibold  mt-36">Select Country</label>
 
-      <div>
-        <label class="block font-semibold">Name</label>
-        <input type="text" name="user_name" class="w-full border px-3 py-2 rounded"/>
-      </div>
+    <select v-model="selected" class="border p-2 w-full">
+      <option disabled value="">Select Country</option>
 
-      <div>
-        <label class="block font-semibold">Email</label>
-        <input type="email" name="user_email" class="w-full border px-3 py-2 rounded"/>
-      </div>
+      <option v-for="item in countries" :key="item.code" :value="item">
+        {{ item.emoji }} {{ item.name }} ({{ item.phone }})
+      </option>
+    </select>
+    
 
-      <div>
-        <label class="block font-semibold">Message</label>
-        <textarea name="message" class="w-full border px-3 py-2 rounded"></textarea>
-      </div>
-
-      <div>
-        <label class="block font-semibold">Upload Image</label>
-        <input type="file" @change="handleFileUpload" accept="image/*" />
-        <div v-if="logoPreview" class="mt-2">
-          <img :src="logoPreview" alt="Preview" class="w-32 h-auto border" />
-        </div>
-      </div>
-
-      <input type="submit" value="Send" class="bg-blue-600 text-white px-4 py-2 rounded cursor-pointer"/>
-    </form>
+    <!-- Display selected -->
+    <div v-if="selected" class="flex items-center gap-2 mt-4">
+      <Icon :icon="selected.icon" class="w-6 h-6" />
+      <span>{{ selected.name }}</span>
+      <span class="text-gray-500">• {{ selected.phone }}</span>
+    </div>
   </div>
 </template>
 
-
 <script setup>
-import { ref } from "vue";
-import emailjs from "@emailjs/browser";
+import { Icon } from "@iconify/vue";
+import countries from "@/utils/countries.js";
 
-const form = ref(null);
-
-const sendEmail = () => {
-  emailjs
-    .sendForm(
-      "service_vu5e4wr",
-      "template_mgul5qr",
-      form.value,
-      {
-        publicKey: "bhP-AYC0gYX463TjF",
-      }
-    )
-    .then(
-      () => {
-        console.log("SUCCESS!");
-        alert("Email sent successfully!");
-      },
-      (error) => {
-        console.log("FAILED...", error.text);
-        alert("Email failed to send.");
-      }
-    );
-};
+const selected = ref("");
 </script>
