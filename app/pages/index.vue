@@ -214,98 +214,101 @@
       </div>
   </Container>
 
-  <Container>
-      <UiTypographyP small_text class="flex items-center justify-center gap-2 mb-2 uppercase">
-        <span class="h-1 aspect-square rounded-full bg-secondary" v-for="i in 2"></span>
-        FAQs & A
-        <span class="h-1 aspect-square rounded-full bg-secondary" v-for="i in 2"></span>
-      </UiTypographyP> 
-      <UiTypographyH2 class="text-center">Get every answer</UiTypographyH2>
+  <section class="bg-neutral-100">
+    <Container>
+        <UiTypographyP small_text class="flex items-center justify-center gap-2 mb-2 uppercase">
+          <span class="h-1 aspect-square rounded-full bg-secondary" v-for="i in 2"></span>
+          FAQs & A
+          <span class="h-1 aspect-square rounded-full bg-secondary" v-for="i in 2"></span>
+        </UiTypographyP> 
+        <UiTypographyH2 class="text-center">Get every answer</UiTypographyH2>
 
-      <Accordion class="mt-16 max-w-2xl mx-auto">
-        <AccordionItem>
-          <template #accordion-trigger>
-            How long does the trademark registration process take?
-          </template>
-          <template #accordion-content>
-            <li>The full process typically takes several months, depending on USPTO review times. We monitor your application closely and keep you updated at each stage.</li>
-          </template>
-        </AccordionItem>
+        <Accordion class="mt-16 max-w-2xl mx-auto">
+          <AccordionItem>
+            <template #accordion-trigger>
+              How long does the trademark registration process take?
+            </template>
+            <template #accordion-content>
+              <li>The full process typically takes several months, depending on USPTO review times. We monitor your application closely and keep you updated at each stage.</li>
+            </template>
+          </AccordionItem>
 
-        <AccordionItem>
-          <template #accordion-trigger>
-            What information do I need to start a trademark application?
-          </template>
-          <template #accordion-content>
-            <li>You’ll need your business name, logo or slogan, a description of your goods or services, and proof of use if applicable. We’ll guide you through each required detail.</li>
-          </template>
-        </AccordionItem>
+          <AccordionItem>
+            <template #accordion-trigger>
+              What information do I need to start a trademark application?
+            </template>
+            <template #accordion-content>
+              <li>You’ll need your business name, logo or slogan, a description of your goods or services, and proof of use if applicable. We’ll guide you through each required detail.</li>
+            </template>
+          </AccordionItem>
 
-        <AccordionItem>
-          <template #accordion-trigger>
-            What happens if the USPTO issues an Office Action?
-          </template>
-          <template #accordion-content>
-            <li>If the USPTO raises questions or objections, we prepare and file the appropriate response on your behalf. This helps keep your application on track.</li>
-          </template>
-        </AccordionItem>
+          <AccordionItem>
+            <template #accordion-trigger>
+              What happens if the USPTO issues an Office Action?
+            </template>
+            <template #accordion-content>
+              <li>If the USPTO raises questions or objections, we prepare and file the appropriate response on your behalf. This helps keep your application on track.</li>
+            </template>
+          </AccordionItem>
 
-        <AccordionItem>
-          <template #accordion-trigger>
-            Do I need to have a registered business before filing a trademark?
-          </template>
-          <template #accordion-content>
-            <li>No, you can apply as an individual or entity. Many clients secure their trademarks before finalizing their business registrations.</li>
-          </template>
-        </AccordionItem>
+          <AccordionItem>
+            <template #accordion-trigger>
+              Do I need to have a registered business before filing a trademark?
+            </template>
+            <template #accordion-content>
+              <li>No, you can apply as an individual or entity. Many clients secure their trademarks before finalizing their business registrations.</li>
+            </template>
+          </AccordionItem>
 
-        <AccordionItem>
-          <template #accordion-trigger>
-            Can I trademark a name that is already in use?
-          </template>
-          <template #accordion-content>
-            <li>It depends on the similarity of the goods or services and the likelihood of confusion. Our trademark search helps determine whether your mark is available.</li>
-          </template>
-        </AccordionItem>
+          <AccordionItem>
+            <template #accordion-trigger>
+              Can I trademark a name that is already in use?
+            </template>
+            <template #accordion-content>
+              <li>It depends on the similarity of the goods or services and the likelihood of confusion. Our trademark search helps determine whether your mark is available.</li>
+            </template>
+          </AccordionItem>
 
-        <AccordionItem>
-          <template #accordion-trigger>
-            What is the difference between ™ and ® symbols?
-          </template>
-          <template #accordion-content>
-            <li>The ™ symbol can be used without registration, while the ® symbol is reserved for trademarks officially registered with the USPTO.</li>
-          </template>
-        </AccordionItem>
+          <AccordionItem>
+            <template #accordion-trigger>
+              What is the difference between ™ and ® symbols?
+            </template>
+            <template #accordion-content>
+              <li>The ™ symbol can be used without registration, while the ® symbol is reserved for trademarks officially registered with the USPTO.</li>
+            </template>
+          </AccordionItem>
 
-        <AccordionItem>
-          <template #accordion-trigger>
-            Will my trademark protect me internationally?
-          </template>
-          <template #accordion-content>
-            <li>A U.S. trademark protects your mark only within the United States. However, we can assist with international filings through additional processes.</li>
-          </template>
-        </AccordionItem>
+          <AccordionItem>
+            <template #accordion-trigger>
+              Will my trademark protect me internationally?
+            </template>
+            <template #accordion-content>
+              <li>A U.S. trademark protects your mark only within the United States. However, we can assist with international filings through additional processes.</li>
+            </template>
+          </AccordionItem>
 
-        <AccordionItem>
-          <template #accordion-trigger>
-            Can I make changes to my trademark after it’s filed?
-          </template>
-          <template #accordion-content>
-            <li>Minor adjustments may be allowed, but material changes generally require a new application. We review any updates to ensure compliance.</li>
-          </template>
-        </AccordionItem>
+          <AccordionItem>
+            <template #accordion-trigger>
+              Can I make changes to my trademark after it’s filed?
+            </template>
+            <template #accordion-content>
+              <li>Minor adjustments may be allowed, but material changes generally require a new application. We review any updates to ensure compliance.</li>
+            </template>
+          </AccordionItem>
 
-        <AccordionItem>
-          <template #accordion-trigger>
-            How do I maintain my trademark once it’s registered?
-          </template>
-          <template #accordion-content>
-            <li>Trademarks require periodic renewals and ongoing use. We remind you of upcoming deadlines and offer maintenance support to keep your mark active.</li>
-          </template>
-        </AccordionItem>
+          <AccordionItem>
+            <template #accordion-trigger>
+              How do I maintain my trademark once it’s registered?
+            </template>
+            <template #accordion-content>
+              <li>Trademarks require periodic renewals and ongoing use. We remind you of upcoming deadlines and offer maintenance support to keep your mark active.</li>
+            </template>
+          </AccordionItem>
 
-      </Accordion>
-  </Container>
+        </Accordion>
+    </Container>
+  </section>
+
 </template>
 
 <script setup>

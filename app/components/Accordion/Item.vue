@@ -222,6 +222,7 @@ export default {
 .accordion__content {
   margin-top: 0; /* sit directly under the trigger so borders can join */
   border: 1px solid #b78d46;
+  background: white;
   border-radius: 0;
   overflow: hidden;
   padding: 1.2rem 1rem 0.7rem;
