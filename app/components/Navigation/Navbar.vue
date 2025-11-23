@@ -7,7 +7,8 @@
 
       <!-- Desktop Navigation -->
       <div class="hidden md:flex gap-8 flex-shrink-0">
-        <UiButtonsTertiary>FAQs</UiButtonsTertiary>
+        <UiButtonsTertiary url="/#pricing">Pricing</UiButtonsTertiary>
+        <UiButtonsTertiary url="/#faqs">FAQs</UiButtonsTertiary>
         <UiButtonsPrimary>Register my Trademark</UiButtonsPrimary>
       </div>
 
@@ -16,8 +17,8 @@
 
       <!-- Mobile Menu (rendered conditionally) -->
        <div v-if="menuRevealed" class="flex flex-col items-start gap-12 md:hidden absolute bg-white h-screen top-[4.6rem] left-0 px-6 py-10 w-full">
-          <UiButtonsTertiary style="font-size: 1.5rem;">Pricing</UiButtonsTertiary>
-          <UiButtonsTertiary style="font-size: 1.5rem;">FAQs</UiButtonsTertiary>
+          <UiButtonsTertiary url="/#pricing" style="font-size: 1.5rem;">Pricing</UiButtonsTertiary>
+          <UiButtonsTertiary url="/#faqs" style="font-size: 1.5rem;">FAQs</UiButtonsTertiary>
           <UiButtonsPrimary>Register my Trademark</UiButtonsPrimary>
        </div>
     </Container>
