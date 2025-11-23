@@ -92,7 +92,7 @@
       <UiButtonsPrimary class="mx-auto mt-16">Register My Trademark</UiButtonsPrimary>
   </Container>
 
-  <section class="bg-accent-100 bg-opacity-40">
+  <section class="bg-accent-100 bg-opacity-40" id="pricing">
     <Container>
       <UiTypographyP small_text class="flex items-center justify-center gap-2 mb-2 uppercase">
         <span class="h-1 aspect-square rounded-full bg-secondary" v-for="i in 2"></span>
