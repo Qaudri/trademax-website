@@ -1,60 +1,32 @@
 <template>
   <section v-if="show"
-    class=" fixed w-full z-100 h-dvh overflow-y-auto bg-black/70 backdrop-invert backdrop-opacity-10">
+    class=" fixed w-full z-100 h-dvh overflow-y-auto bg-black/85">
 
     <div class="flex h-full justify-center items-center">
 
       <div :class="showform ? 'translate-y-0' : '-translate-y-[700px]'"
-        class="w-[800px] duration-300 ease-in-out rounded-2xl mx-4 flex overflow-hidden bg-white shadow-xl h-fit">
-
-        <!-- Left image -->
-        <div class="w-1/2  sm:block hidden bg-[url('/images/law.jpg')] bg-cover bg-center">
-
-          <div class="p-3 h-full flex-col  pt-20  justify-between r -full bg-black/40">
-            <UiTypographyP color="white" class=" text-center"> <span class="  font-bold text-center text-xl">Trusted trademark
-                services</span></UiTypographyP>
-
-            <div class="  rounded-lg bg-secondary/40 p-3 h-fit flex flex-col mt-6  items-start gap-2 my-8">
-              <UiTypographyP color="white" class="flex items-center justify-center gap-4">
-                <UiIconsCheck class="text-secondary w-6" />
-                Maximise your chances for successful TM registration
-              </UiTypographyP>
-              <UiTypographyP color="white" class="flex items-center justify-center gap-4">
-                <UiIconsCheck class="text-secondary w-6" />
-                Flat-fee pricing with no hidden costs
-              </UiTypographyP>
-              <UiTypographyP color="white" class="flex items-center justify-center gap-4">
-                <UiIconsCheck class="text-secondary w-6" />
-                Experienced legal team in your corner, just 1-click away
-              </UiTypographyP>
-            </div>
-          </div>
-        </div>
+        class="w-full max-w-lg duration-300 ease-in-out mx-4 flex overflow-hidden bg-white shadow-xl h-fit">
 
         <!-- Right content -->
-        <div class="md:w-1/2 w-full p-4 overflow-y-auto space-y-2">
+        <div class="p-6 overflow-y-auto space-y-2">
 
-          <!-- Close button -->
-          <div class="flex justify-end m">
+          <div class="flex justify-between gap-4">
+            <div>
+              <UiTypographyH3>
+                Ready to Protect Your<span class="text-scondary"> Brand?</span>
+              </UiTypographyH3>
+            <UiTypographyP small_text>
+              Secure your brand effortlessly with our expert and reliable trademark registration service.
+            </UiTypographyP>
+            </div>
             <button @click="closeForm()"
-              class="bg-red-600 text-white w-7 h-7 flex justify-center items-center font-bold rounded-full">
-              x
+              class="bg-red-600 text-white min-w-7 h-7 flex justify-center items-center font-bold">
+              <UiIconsClose class="w-5" />
             </button>
           </div>
 
-          <UiTypographyH3>
-            <span class="font-bold ">
-              Ready to Protect Your
-              <span class="text-accent-600 font-bold">Brand?</span>
-            </span>
-          </UiTypographyH3>
 
-          <UiTypographyP>
-            <span class=" text-sm">Secure your brand effortlessly with our expert and reliable
-              trademark registration service.</span>
-          </UiTypographyP>
-
-          <form class="px-4 pt-2 space-y-4">
+          <form class="pt-6 space-y-4">
             <FormInput label="Full Name" :required="true" v-model:inputValue="form.fullname" type="text"
               name="fullname" />
             <FormInput label="Email Address" :required="true" v-model:inputValue="form.email" type="email"
