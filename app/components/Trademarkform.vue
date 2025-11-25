@@ -4,8 +4,18 @@
 
     <div class="flex h-full justify-center items-center">
 
-      <div :class="showform ? 'translate-y-0' : '-translate-y-[700px]'"
-        class="w-full max-w-lg duration-300 ease-in-out mx-4 flex overflow-hidden bg-white shadow-xl h-fit">
+      <Transition
+        appear
+        enter-active-class="duration-300 ease-in-out"
+        enter-from-class="-translate-y-[700px]"
+        enter-to-class="translate-y-0"
+        leave-active-class="duration-300 ease-in-out"
+        leave-from-class="translate-y-0"
+        leave-to-class="-translate-y-[700px]"
+        @after-leave="onPanelLeave"
+      >
+        <div v-if="showform"
+          class="w-full max-w-lg mx-4 flex overflow-hidden bg-white shadow-xl h-fit">
 
         <!-- Right content -->
         <div class="p-6 overflow-y-auto space-y-2">
@@ -26,29 +36,35 @@
           </div>
 
 
-          <form class="pt-6 space-y-4">
+          <form @submit.prevent="submit" class="pt-6 space-y-4">
             <FormInput label="Full Name" :required="true" v-model:inputValue="form.fullname" type="text"
               name="fullname" />
             <FormInput label="Email Address" :required="true" v-model:inputValue="form.email" type="email"
               name="email" />
             <FormInput label="Phone Number" :required="true" v-model:inputValue="form.phone" type="text" name="phone" />
             <FormTextarea label="Message" :required="true" v-model:inputValue="form.message" name="message" />
-            <FormButton @click="submit" :loading="isLoading" type="submit">Submit</FormButton>
+            <FormButton :loading="isLoading" type="submit">Submit</FormButton>
           </form>
 
         </div>
 
       </div>
+      </Transition>
     </div>
 
   </section>
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, nextTick, onMounted } from 'vue'
 import { useFormStore } from '@/stores/formStore'
 const formStore = useFormStore()
-const form = formStore.form
+const form = ref({
+  fullname: '',
+  email: '',
+  phone: '',
+  message: ''
+})
 import { useRouter } from 'vue-router'
 
 const router = useRouter()
@@ -61,44 +77,54 @@ const isLoading = ref(false)
 const emit = defineEmits(['closeform', 'openform'])
 
 // OPEN FORM
-const openForm = () => {
+const openForm = async () => {
   show.value = true             // reveal popup
+  await nextTick()              // wait for overlay to mount
+  showform.value = true         // slide up animation
+  emit('openform')
+}
 
-  setTimeout(() => {
-    showform.value = true       // slide up animation
-    emit('openform')
-  }, 20)
+const onPanelLeave = () => {
+  show.value = false            // fully hide after animation ends
 }
 
 const closeForm = () => {
   showform.value = false        // slide down animation
   emit('closeform')
-
-  setTimeout(() => {
-    show.value = false          // fully hide
-  }, 200)                       // matches duration-700
 }
 
-const submit = (e) => {
+const submit = async () => {
   isLoading.value = true
-
-  e.preventDefault()
-  setTimeout(() => {
-
-    router.push('/forms')
+  
+  try {
+    // Validate form
+    if (!form.value.fullname || !form.value.email || !form.value.phone || !form.value.message) {
+      alert('Please fill in all fields')
+      isLoading.value = false
+      return
+    }
+    
+    // Store form data in Pinia store
+    formStore.form.fullname = form.value.fullname
+    formStore.form.email = form.value.email
+    formStore.form.phone = form.value.phone
+    formStore.form.message = form.value.message
+    
+    // Close the form with animation
+    showform.value = false
+    
+    // Wait for animation to complete before navigating
+    await new Promise(resolve => setTimeout(resolve, 300))
+    
+    // Navigate to forms page
+    await router.push('/forms')
+  } finally {
     isLoading.value = false
-
-  }, 500)
-
-
+  }
 }
 // CLOSE FORM
 
-
 onMounted(() => {
-
-
-  console.log("Form reset on page reload")
 })
 
 // expose to parent so you can call openForm()
