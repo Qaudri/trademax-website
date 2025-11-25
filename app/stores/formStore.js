@@ -8,5 +8,13 @@ export const useFormStore = defineStore('form', () => {
     phone: '',
     message: ''
   })
-  return { form }
+
+  const setFormData = (data) => {
+    form.value = {
+      ...form.value,
+      ...data
+    }
+  }
+
+  return { form, setFormData }
 })
